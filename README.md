@@ -1,7 +1,7 @@
 == README
 
 This is an app to manage basic student data for GLC. 
-I hope to later on add features so that we can manage class materails too!
+I hope to later on add features so that we can manage class materials too!
 
 
 ▒▒▒░░░░░░░░░░▄▐░░░░
