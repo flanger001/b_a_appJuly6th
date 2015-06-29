@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate(page: params[:page]).per_page(15)
   end
   
   def new
@@ -51,6 +51,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+  
   def logged_in_user
     unless logged_in?
       store_location
