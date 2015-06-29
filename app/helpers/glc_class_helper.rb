@@ -1,0 +1,2 @@
+module GlcClassHelper
+end

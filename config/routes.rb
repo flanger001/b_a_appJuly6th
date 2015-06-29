@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'  => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  
+  match '/glcclasses/new' => 'glc_classes#new'
+  
   resources :users, only: [:index, :show, :edit, :destroy, :update]
+  resources :glcclasses
   
 end
 
