@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629121007) do
+ActiveRecord::Schema.define(version: 20150629134342) do
 
-  create_table "glc_classes", force: :cascade do |t|
-    t.string   "class_name"
+  create_table "klasses", force: :cascade do |t|
+    t.string   "klass_name"
     t.string   "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,11 @@
+<% provide(:title, 'All Classes') %>
+<h1>All classes</h1>
+<h3><%= link_to "Add a class", new_klass_path, class: "btn btn-primary btn-sm" %></h3>
+<ul class="classes">
+  <% @klasses.each do |klass| %>
+      <li>
+        <%= link_to klass.klass_name, klass %> &emsp;|&emsp; <%= klass.day %>  &emsp;|&emsp; 
+                  <%= link_to "delete", klass, method: :delete, data: { confirm: "You sure?" } %>
+      </li>
+  <% end %>
+</ul>
