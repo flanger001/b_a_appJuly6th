@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'  => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  #get 'klass'     => 'klasses#new'
+  #get 'classes'     => 'klasses#new'
+  #post 'classes'    => 'klasses#create'
+  #delete 'dlclasses' => 'klasses#destroy'
+  #get 'classes'   => 'klasses#index'
   
   resources :users, only: [:index, :show, :edit, :destroy, :update]
   resources :klasses

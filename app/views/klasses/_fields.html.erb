@@ -1,0 +1,9 @@
+<%= render 'shared/klass_error_messages' %>
+      <%= f.label :klass_name, "Class Name" %>
+      <%= f.text_field :klass_name, class: 'form-control' %>
+      
+      <%= f.label :day %>
+      <%= f.select :day, options_for_select([["Select One", ""], ["Monday", "1 Monday"],
+                          ["Tuesday", "2 Tuesday"], ["Wednesday", "3 Wednesday"], ["Thursday", "4 Thursday"], 
+                          ["Friday", "5 Friday"], ["Saturday", "6 Saturday"], ["Sunday", "7 Sunday"], 
+                          ["Other", "8 Other"]], class: 'form-control') %>

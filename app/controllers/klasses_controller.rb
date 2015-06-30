@@ -18,6 +18,10 @@ class KlassesController < ApplicationController
   
   def index
     @klasses = Klass.all
+    @klasses_grid = initialize_grid(Klass,
+    order:           'day',
+    order_direction: 'asc'
+    )
   end
   
   def show
@@ -28,6 +32,20 @@ class KlassesController < ApplicationController
     Klass.find(params[:id]).destroy
     flash[:success] = "Class deleted"
     redirect_to klasses_url
+  end
+  
+  def edit
+    @klass = Klass.find(params[:id])
+  end
+  
+  def update
+    @klass = Klass.find(params[:id])
+    if @klass.update_attributes(klass_params)
+      flash[:success] = "Class updated"
+      redirect_to @klass
+    else
+      render 'edit'
+    end
   end
   
   private

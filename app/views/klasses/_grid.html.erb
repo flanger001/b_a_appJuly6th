@@ -1,0 +1,19 @@
+<%# show_filters: :when_filtered %>
+<%= grid(@klasses_grid) do |g|
+
+  #g.column name:  'ID', attribute: 'id' do |task|
+  #  task.id
+  #end
+
+  g.column name:  'Class Name', attribute: 'klass_name'  do |k|
+    k.klass_name
+  end
+
+  g.column  name:  'Day', attribute: 'day' do |k|
+    k.day
+  end
+
+  g.column   do |k|
+    link_to('Edit', edit_klass_path(k))
+  end
+end -%>
