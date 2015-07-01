@@ -26,6 +26,7 @@ class KlassesController < ApplicationController
   
   def show
     @klass = Klass.find(params[:id])
+    @user = User.find(params[:id])
   end
   
   def destroy
@@ -51,7 +52,7 @@ class KlassesController < ApplicationController
   private
   
   def klass_params
-      params.require(:klass).permit(:klass_name, :day)
+      params.require(:klass).permit(:klass_name, :day, :user_id)
   end
     
   def logged_in_user

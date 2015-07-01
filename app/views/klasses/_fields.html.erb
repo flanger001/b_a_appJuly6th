@@ -7,3 +7,5 @@
                           ["Tuesday", "2 Tuesday"], ["Wednesday", "3 Wednesday"], ["Thursday", "4 Thursday"], 
                           ["Friday", "5 Friday"], ["Saturday", "6 Saturday"], ["Sunday", "7 Sunday"], 
                           ["Other", "8 Other"]], class: 'form-control') %>
+                          
+      <%= f.collection_select :user_id, User.all, :id, :name, :prompt => "Teacher in charge" %>
