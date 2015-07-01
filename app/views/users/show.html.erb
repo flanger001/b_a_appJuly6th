@@ -7,6 +7,15 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      
+      <p><%= @user.name %>'s classes</p>
+      <% if @user.klasses %>
+        <% @user.klasses.each do |klass| %>
+          <ul><%= link_to(klass.klass_name, klass_path(klass))  %></ul>
+        <% end %>
+      <% else %>
+        <p>No Classes yet...</p>
+      <% end %>
     </section>
   </aside>
 </div>

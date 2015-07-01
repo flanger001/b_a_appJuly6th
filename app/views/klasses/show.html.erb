@@ -8,7 +8,7 @@
       </h1>
       <p><%= @klass.day %></p>
       <h2>
-        <%= @user.name %>
+        <%= link_to(@user.name, user_path(@user)) %>
       </h2>
     </section>
   </aside>
