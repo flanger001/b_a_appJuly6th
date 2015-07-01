@@ -26,7 +26,9 @@ class KlassesController < ApplicationController
   
   def show
     @klass = Klass.find(params[:id])
-    @user = User.find(params[:id])
+    if @klass.user_id
+      @user = User.find(@klass.user_id)
+    end
   end
   
   def destroy

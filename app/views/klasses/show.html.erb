@@ -7,9 +7,13 @@
         <%= @klass.klass_name %>
       </h1>
       <p><%= @klass.day %></p>
-      <h2>
-        <%= link_to(@user.name, user_path(@user)) %>
-      </h2>
+      <% if @klass.user_id %>
+        <h2>
+          <%= link_to(@user.name, user_path(@user)) %>
+        </h2>
+      <% else %>
+        <p>No teacher assigned...</p>
+      <% end %>
     </section>
   </aside>
 </div>
