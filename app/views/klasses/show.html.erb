@@ -6,14 +6,16 @@
       <h1>
         <%= @klass.klass_name %>
       </h1>
-      <p><%= @klass.day %></p>
+      <%= link_to "Delete class", @klass, method: :delete, data: { confirm: "You sure?" } %>
+      <p>On: <%= @klass.day %></p>
+      <section class = "teacher_name">
       <% if @klass.user_id %>
-        <h2>
-          <%= link_to(@user.name, user_path(@user)) %>
+          Teacher: <%= link_to(@user.name, user_path(@user)) %>
         </h2>
       <% else %>
         <p>No teacher assigned...</p>
       <% end %>
+      </section>
     </section>
   </aside>
 </div>

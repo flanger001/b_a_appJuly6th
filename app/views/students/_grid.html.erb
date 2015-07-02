@@ -1,7 +1,7 @@
 <%= grid(@students_grid) do |g|
   
   g.column name:  'Name', attribute: 'name'  do |s|
-    s.name
+    link_to(s.name, s)
   end
   
   #g.column  name:  'Class', attribute: 'klass' do |s|
@@ -11,4 +11,5 @@
   g.column   do |s|
     link_to('Edit', edit_student_path(s))
   end
+  
 end -%>

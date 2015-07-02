@@ -6,6 +6,7 @@
       <h1>
         <%= @student.name %>
       </h1>
+      <%= link_to "Delete student", @student, method: :delete, data: { confirm: "You sure?" } %>
     </section>
   </aside>
 </div>
