@@ -1,0 +1,14 @@
+<%= grid(@students_grid) do |g|
+  
+  g.column name:  'Name', attribute: 'name'  do |s|
+    s.name
+  end
+  
+  #g.column  name:  'Class', attribute: 'klass' do |s|
+  #  s.klass
+  #end
+
+  g.column   do |s|
+    link_to('Edit', edit_student_path(s))
+  end
+end -%>

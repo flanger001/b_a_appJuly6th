@@ -3,5 +3,7 @@ class Klass < ActiveRecord::Base
   validates :day, presence: true
   
   belongs_to :teacher
+  has_many :classrooms
+  has_many :students, :through => :classrooms
   
 end

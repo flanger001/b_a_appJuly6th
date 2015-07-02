@@ -1,0 +1,5 @@
+<%= render 'shared/student_error_messages' %>
+      <%= f.label :name, "Name/code" %>
+      
+      <%= #f.collection_select :user_id, User.all, :id, :name, :prompt => "Teacher in charge" %>
+      <%# the above is commented out until I figure out the has_many through stuff

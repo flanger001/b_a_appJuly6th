@@ -1,0 +1,6 @@
+<% provide(:title, 'All Students') %>
+<h1>All classes</h1>
+<h3><%= link_to "Add a student", new_student_path, class: "btn btn-primary btn-sm" %></h3>
+<ul class="students">
+  <%= render 'grid' %>
+</ul>

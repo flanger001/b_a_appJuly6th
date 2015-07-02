@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   root             'static_pages#home'
-  root              'sessions#new'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show, :edit, :destroy, :update]
   resources :klasses
+  resources :students
   
 end
 
