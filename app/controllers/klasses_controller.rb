@@ -54,7 +54,7 @@ class KlassesController < ApplicationController
   private
   
   def klass_params
-      params.require(:klass).permit(:klass_name, :day, :user_id)
+      params.require(:klass).permit(:klass_name, :day, :user_id, :student_id)
   end
     
   def logged_in_user

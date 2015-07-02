@@ -2,7 +2,6 @@
       <%= f.label :name, "Name/code" %>
       <%= f.text_field :name, class: 'form-control' %>
       
-      <% if false %>
-      <%= f.collection_select :user_id, User.all, :id, :name, :prompt => "Teacher in charge" %>
-      the above is commented out until I figure out the has_many through stuff
-      <% end %>
+      <%= f.collection_select :klass_id, Klass.all, :id, :klass_name, :prompt => "Class" %>
+
+{:multiple => true}
