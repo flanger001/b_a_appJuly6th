@@ -2,6 +2,8 @@
       <%= f.label :name, "Name/code" %>
       <%= f.text_field :name, class: 'form-control' %>
       
-      <%= f.collection_select :klass_id, Klass.all, :id, :klass_name, :prompt => "Class" %>
+      <%= collection_select :student, :klass_ids, Klass.all, :id, :klass_name, 
+                            {:prompt => "Select Class"}, 
+                            {:multiple => true, :size => 5 } %>
 
-{:multiple => true}
+
