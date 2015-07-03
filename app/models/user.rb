@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   
   has_many :klasses
-  has_many :students, :through => :klasses
+  #has_many :students, :through => :klasses
+  
   #returns hash digest of given string
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
