@@ -1,10 +1,10 @@
 class KlassesController < ApplicationController
   before_action :logged_in_user #, only: [:index, :edit, :update, :destroy]
-  
+
   def new
     @klass = Klass.new
   end
-  
+
   def create
     @klass = Klass.new(klass_params)
     if @klass.save
@@ -15,32 +15,29 @@ class KlassesController < ApplicationController
       render 'new'
     end
   end
-  
+
   def index
     @klasses = Klass.all
-    @klasses_grid = initialize_grid(Klass,
-    order:           'day',
-    order_direction: 'asc'
-    )
+    @klasses_grid = initialize_grid(Klass, order: 'day', order_direction: 'asc')
   end
-  
+
   def show
     @klass = Klass.find(params[:id])
     if @klass.user_id
       @user = User.find(@klass.user_id)
     end
   end
-  
+
   def destroy
     Klass.find(params[:id]).destroy
     flash[:success] = "Class deleted"
     redirect_to klasses_url
   end
-  
+
   def edit
     @klass = Klass.find(params[:id])
   end
-  
+
   def update
     @klass = Klass.find(params[:id])
     if @klass.update_attributes(klass_params)
@@ -50,11 +47,11 @@ class KlassesController < ApplicationController
       render 'edit'
     end
   end
-  
+
   private
-  
+
   def klass_params
-      params.require(:klass).permit(:klass_name, :day, :user_id, :student_id)
+    params.require(:klass).permit(:klass_name, :day, :user_id, :student_id)
   end
-  
+
 end

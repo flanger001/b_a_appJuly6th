@@ -3,20 +3,20 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="student_info">
-      <h1>
-        <%= @student.name %>
-      </h1>
-      <p>
+      <h1><%= @student.name %></h1>
       <% if @student.enrollments %>
-          <%= @student.enrollments.each do |klass| %>
-          <ul><%= link_to(klass.klass_name, klass_path(klass))  %></ul>
-          <% end %>
-        
-        <% else %>
-        This student is not enrolled in any classes
+          <ul>
+            <% @student.enrollments.each do |klass| %>
+                <li>
+                  <%= link_to(klass.klass_name, klass_path(klass)) %>
+                </li>
+            <% end %>
+          </ul>
+
+      <% else %>
+          <p>This student is not enrolled in any classes</p>
       <% end %>
-      </p>
-        
+
       <%= link_to "Delete student", @student, method: :delete, data: { confirm: "You sure?" } %>
     </section>
   </aside>
