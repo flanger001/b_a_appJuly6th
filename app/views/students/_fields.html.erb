@@ -1,9 +1,7 @@
-<%= render 'shared/student_error_messages' %>
+<%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, "Name/code" %>
       <%= f.text_field :name, class: 'form-control' %>
       
-      <%= collection_select :student, :klass_ids, Klass.all, :id, :klass_name, 
-                            {:prompt => "Select Class"}, 
+      <%= collection_select :klass_ids, Klass.all, :id, :klass_name, 
+                            {:prompt => true}, 
                             {:multiple => true, :size => 5 } %>
-
-

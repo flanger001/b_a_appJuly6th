@@ -6,6 +6,17 @@
       <h1>
         <%= @student.name %>
       </h1>
+      <p>
+      <% if @student.enrollments %>
+          <%= @student.enrollments.each do |klass| %>
+          <ul><%= link_to(klass.klass_name, klass_path(klass))  %></ul>
+          <% end %>
+        
+        <% else %>
+        This student is not enrolled in any classes
+      <% end %>
+      </p>
+        
       <%= link_to "Delete student", @student, method: :delete, data: { confirm: "You sure?" } %>
     </section>
   </aside>

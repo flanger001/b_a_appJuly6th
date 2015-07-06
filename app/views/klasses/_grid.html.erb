@@ -12,6 +12,10 @@
   g.column  name:  'Day', attribute: 'day' do |k|
     k.day
   end
+  
+  g.column  name:  'Teacher', attribute: 'user_id' do |k|
+    User.find(k.user_id).name if k.user_id
+  end
 
   g.column   do |k|
     link_to('Edit', edit_klass_path(k))

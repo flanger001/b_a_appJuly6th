@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :destroy, :update]
   resources :klasses
   resources :students
+  resources :enrollments, only: [:create, :destroy]
   
 end
 

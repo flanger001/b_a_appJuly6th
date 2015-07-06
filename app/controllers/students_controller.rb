@@ -3,6 +3,9 @@ class StudentsController < ApplicationController
   
   def show
     @student = Student.find(params[:id])
+    unless @student.klasses
+      @student.klasses = nil
+    end
   end
   
   def index
@@ -11,6 +14,7 @@ class StudentsController < ApplicationController
   
   def new
     @student = Student.new
+    @enrollment = @student.enrollments.build
   end
   
   def create
@@ -34,18 +38,20 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
   
+  def update
+    @student = Student.find(params[:id])
+    if @student.update_attributes(student_params)
+      flash[:success] = "Student updated"
+      redirect_to @student
+    else
+      render 'edit'
+    end
+  end
+  
   private
   
   def student_params
-    params.require(:student).permit(:name, :klass_id)
-  end
-  
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in"
-      redirect_to login_url
-    end
+    params.require(:student).permit(:name, :klass_id => [])
   end
   
 end
