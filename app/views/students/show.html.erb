@@ -6,9 +6,9 @@
       <h1><%= @student.name %></h1>
       <% if @student.enrollments %>
           <ul>
-            <% @student.enrollments.each do |klass| %>
+            <% @student.enrollments.each do |enrollment| %>
                 <li>
-                  <%= link_to(klass.klass_name, klass_path(klass)) %>
+                  <%= link_to(enrollment.klass_name, klass_path(enrollment.klass)) %>
                 </li>
             <% end %>
           </ul>
